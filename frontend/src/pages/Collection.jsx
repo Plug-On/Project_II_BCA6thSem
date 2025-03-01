@@ -45,7 +45,7 @@ const Collection = () => {
 
     setFilterProducts(productsCopy)
   }
-     //sorting logic
+     //sorting logic for price
   const sortProduct = () => {
     let fpCopy = filterProducts.slice();
     switch (sortType) {
