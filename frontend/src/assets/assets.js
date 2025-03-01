@@ -114,7 +114,7 @@ export const products = [
         description: "Tasty, bite-sized training treats made with real meat! Soft, chewy, and perfect for rewarding your growing pup. 🐶🎉",
         price: 200,
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
-        category: "Men",
+        category: "Dog",
         subCategory: "Foods",
         sizes: ["M", "L", "XL"],
         date: 1716621345448,
