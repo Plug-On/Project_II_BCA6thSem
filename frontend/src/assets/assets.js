@@ -98,8 +98,8 @@ export const assets = {
 export const products = [
     {
         _id: "aaaaa",
-        name: "Women Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        name: "Wiggles & Wags Bacon & Cheese Meaty Sticks Dog Treats 6 OZ",
+        description: "Deliciously meaty sticks with real bacon and cheese flavor! Perfect for rewarding your pup with a tasty, protein-packed treat. 🐶🦴",
         price: 100,
         image: [p_img1],
         category: "Women",
@@ -110,8 +110,8 @@ export const products = [
     },
     {
         _id: "aaaab",
-        name: "Men Round Neck Pure Cotton T-shirt",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        name: "Blue Buffalo® Bits Soft & Chewy Puppy Training Treats - 4 oz",
+        description: "Tasty, bite-sized training treats made with real meat! Soft, chewy, and perfect for rewarding your growing pup. 🐶🎉",
         price: 200,
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Men",
