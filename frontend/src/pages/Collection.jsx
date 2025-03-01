@@ -86,11 +86,11 @@ const Collection = () => {
           <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/> Mens</p>
+              <input className='w-3' type="checkbox" value={'Dog'} onChange={toggleCategory}/> Dogs</p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory}/> WoMen</p>
+              <input className='w-3' type="checkbox" value={'Cat'} onChange={toggleCategory}/> Cats</p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}/> Kids</p>
+              <input className='w-3' type="checkbox" value={'Others'} onChange={toggleCategory}/> Others</p>
           </div>
         </div>
         {/* SubCatogeries Filter */}
@@ -98,11 +98,11 @@ const Collection = () => {
           <p className='mb-3 text-sm font-medium'>Type</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/>Topwear</p>
+              <input className='w-3' type="checkbox" value={'Foods'} onChange={toggleSubCategory}/>Foods</p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/> Bottomwear</p>
+              <input className='w-3' type="checkbox" value={'Clothes'} onChange={toggleSubCategory}/> Clothes</p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/> Winterwear</p>
+              <input className='w-3' type="checkbox" value={'Toys'} onChange={toggleSubCategory}/> Toys</p>
           </div>
         </div>
       </div>
