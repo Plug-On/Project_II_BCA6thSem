@@ -31,10 +31,23 @@ const Collection = () => {
     }
   }
 
-  
+    // filter or sort for category
+  const applyFilter = ()=> {
+    let productsCopy = products.slice();
+    if (category.length > 0) {
+      productsCopy = productsCopy.filter(item => category.includes(item.category));
+    }
+
+    if (subCategory.length > 0) {
+      productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory));
+    }
+
+    setFilterProducts(productsCopy)
+  }
+
   useEffect(()=>{
-    setFilterProducts(products);
-  },[])
+    applyFilter();
+  },[category,subCategory])
 
 
   return (
@@ -52,7 +65,7 @@ const Collection = () => {
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/> Mens</p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'WoMen'} onChange={toggleCategory}/> WoMen</p>
+              <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory}/> WoMen</p>
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}/> Kids</p>
           </div>
