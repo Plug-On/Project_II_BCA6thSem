@@ -104,7 +104,7 @@ export const products = [
         image: [p_img1],
         category: "Cat",
         subCategory: "Foods",
-        sizes: ["S", "M", "L"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716634345448,
         bestseller: true
     },
@@ -116,7 +116,7 @@ export const products = [
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716621345448,
         bestseller: true
     },
@@ -128,7 +128,7 @@ export const products = [
         image: [p_img3],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716234545448,
         bestseller: true
     },
@@ -140,7 +140,7 @@ export const products = [
         image: [p_img4],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "XXL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716621345448,
         bestseller: true
     },
@@ -152,7 +152,7 @@ export const products = [
         image: [p_img5],
         category: "Cat",
         subCategory: "Foods",
-        sizes: ["M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716622345448,
         bestseller: true
     },
@@ -164,7 +164,7 @@ export const products = [
         image: [p_img6],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716623423448,
         bestseller: true
     },
@@ -188,7 +188,7 @@ export const products = [
         image: [p_img8],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716622345448,
         bestseller: false
     },
@@ -200,7 +200,7 @@ export const products = [
         image: [p_img9],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716621235448,
         bestseller: false
     },
@@ -224,7 +224,7 @@ export const products = [
         image: [p_img11],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716623345448,
         bestseller: false
     },
@@ -236,7 +236,7 @@ export const products = [
         image: [p_img12],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" ,"10kg"],
         date: 1716624445448,
         bestseller: false
     },
@@ -248,7 +248,7 @@ export const products = [
         image: [p_img13],
         category: "Cat",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716625545448,
         bestseller: false
     },
@@ -260,7 +260,7 @@ export const products = [
         image: [p_img14],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716626645448,
         bestseller: false
     },
@@ -284,7 +284,7 @@ export const products = [
         image: [p_img16],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716628845448,
         bestseller: false
     },
@@ -308,7 +308,7 @@ export const products = [
         image: [p_img18],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716631045448,
         bestseller: false
     },
@@ -320,7 +320,7 @@ export const products = [
         image: [p_img19],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg"],
         date: 1716632145448,
         bestseller: false
     },
@@ -338,8 +338,8 @@ export const products = [
     },
     {
         _id: "aaaau",
-        name: "Cat Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Whisker City® Pickle Cat Toy - Catnip, Plush",
+        description: "Your cat will love the time it spends playing with this Whisker City Catnip-Filled Pickle Cat Toy. This fun toy is shaped like a pickle, and is filled with catnip to keep your cat's interest. Cats love catnip, and when it comes inside a fun toy such as this it's even more fun for your kitty.",
         price: 170,
         image: [p_img21],
         category: "Cat",
@@ -368,7 +368,7 @@ export const products = [
         image: [p_img23],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "30kg"],
         date: 1716636545448,
         bestseller: false
     },
@@ -380,7 +380,7 @@ export const products = [
         image: [p_img24],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "30kg"],
         date: 1716637645448,
         bestseller: false
     },
@@ -392,14 +392,14 @@ export const products = [
         image: [p_img25],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "30kg"],
         date: 1716638745448,
         bestseller: false
     },
     {
         _id: "aaaaz",
-        name: "Cat Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Instincts SmartyKat Catnip Caravan Cat Toy - 3 Pack",
+        description: "Instincts by SmartyKat Catnip Caravan Set of 3 releases your cat's inner instincts with unpredictably fluttering feathered tails and multi-textured bodies mimicking the feel of prey.",
         price: 220,
         image: [p_img26],
         category: "Cat",
@@ -416,14 +416,14 @@ export const products = [
         image: [p_img27],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716640945448,
         bestseller: false
     },
     {
         _id: "aaabb",
-        name: "Dog Slim Fit Relaxed Denim Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Joyhound Plush Bin Bee Dog Toy",
+        description: "Our Joyhound Plush Bin Bee Dog Toy is a plush toy that provides companionship and comfort for small, medium, and large dogs.",
         price: 230,
         image: [p_img28],
         category: "Dog",
@@ -440,7 +440,7 @@ export const products = [
         image: [p_img29],
         category: "Cat",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716643145448,
         bestseller: false
     },
@@ -452,7 +452,7 @@ export const products = [
         image: [p_img30],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716644245448,
         bestseller: false
     },
@@ -464,7 +464,7 @@ export const products = [
         image: [p_img31],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716645345448,
         bestseller: false
     },
@@ -476,7 +476,7 @@ export const products = [
         image: [p_img32],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716646445448,
         bestseller: false
     },
@@ -488,7 +488,7 @@ export const products = [
         image: [p_img33],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716647545448,
         bestseller: false
     },
@@ -500,14 +500,14 @@ export const products = [
         image: [p_img34],
         category: "Cat",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716648645448,
         bestseller: false
     },
     {
         _id: "aaabi",
-        name: "Cat Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Whisker City® Spring Toys Cat Toys - 4 Pack",
+        description: "Cats are born with a hunting instinct they can engage with this 4-pack of Whisker City Spring Toys. Toss these toys for your cat to get the fun started, or let her play on her own swatting and pouncing the day away. Only at PetZone.",
         price: 240,
         image: [p_img35],
         category: "Cat",
@@ -518,8 +518,8 @@ export const products = [
     },
     {
         _id: "aaabj",
-        name: "Cat Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Tunnel Cat Toy",
+        description: "When your cat is alone, or wants to be left alone, this Whisker City Tunnel Cat Toy is the perfect toy for them. They can play on their own while satisfying their need to explore, hide and seek their own adventure. Only at PetZone.",
         price: 270,
         image: [p_img36],
         category: "Cat",
@@ -536,7 +536,7 @@ export const products = [
         image: [p_img37],
         category: "Cat",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716651945448,
         bestseller: false
     },
@@ -548,7 +548,7 @@ export const products = [
         image: [p_img38],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716653045448,
         bestseller: false
     },
@@ -560,14 +560,14 @@ export const products = [
         image: [p_img39],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716654145448,
         bestseller: false
     },
     {
         _id: "aaabn",
-        name: "Dog Slim Fit Relaxed Denim Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Nylabone® Power Chew Donut Dog Toy, Bacon Glazed Flavor",
+        description: "Now that's funny! We dog-ified everyday objects to introduce extra fun and flair to your dog's chew toy collection. ",
         price: 290,
         image: [p_img40],
         category: "Dog",
@@ -584,7 +584,7 @@ export const products = [
         image: [p_img41],
         category: "Dog",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716656345448,
         bestseller: false
     },
@@ -596,14 +596,14 @@ export const products = [
         image: [p_img42],
         category: "Others",
         subCategory: "Foods",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["100gm", "1kg", "5kg" , "25kg"],
         date: 1716657445448,
         bestseller: false
     },
     {
         _id: "aaabq",
-        name: "Kid Tapered Slim Fit Trouser",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Pet Rabbit Bunny Dress Bunny Easter Costume with Leash Hat Mini Bag Harness Leash ",
+        description: "Pet Rabbit Bunny Dress Bunny Easter Costume with Leash Hat Mini Bag Harness Leash Small Animals Accessory for Rabbit Hedgehog Ferret Guinea Pigs Piggies Squirrel",
         price: 280,
         image: [p_img43],
         category: "Others",
@@ -614,8 +614,8 @@ export const products = [
     },
     {
         _id: "aaabr",
-        name: "Cat Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Whackamouse Corrugate Scratcher Cat Toy",
+        description: "Keep your cat engaged and entertained with this Whisker City Whackamouse Corrugate Cat Toy. This fun toy features pop-up toy sticks that engage your kitty's hunting instincts, while corrugate promotes the kind of positive scratching behaviors you want for your feline friend. ",
         price: 310,
         image: [p_img44],
         category: "Cat",
@@ -626,8 +626,8 @@ export const products = [
     },
     {
         _id: "aaabs",
-        name: "Dog Slim Fit Relaxed Denim Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Top Paw® Spike Ball Dog Toy - Squeaker",
+        description: "Keep your dog active and entertained with this Top Paw Spiky TPR Ball. This spiked ball is perfect for your dog's favorite activities, including interactive games of fetch with. Made from tough thermoplastic rubber, it also stands up to vigorous chewing.",
         price: 290,
         image: [p_img45],
         category: "Dog",
@@ -638,8 +638,8 @@ export const products = [
     },
     {
         _id: "aaabt",
-        name: "Dog Slim Fit Relaxed Denim Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Playology ® Puppy Teething Bone Scented Dog Toy - Beef",
+        description: "Your puppy will love the engaging beef scent of this Playology Teething Bone dog toy. Our puppy teething toys are thoughtfully designed to have the perfect texture and durability for teething puppies. Plus, the all-natural scent is released with every chew and will keep them coming back for more.",
         price: 320,
         image: [p_img46],
         category: "Dog",
@@ -650,8 +650,8 @@ export const products = [
     },
     {
         _id: "aaabu",
-        name: "Kid Tapered Slim Fit Trouser",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Kawaii Pet Cosplay Hat Set for Small Animals ",
+        description: "Coming with bright and stylish colors, the pet rat clothes are attractive and pretty, so you can give them as gifts to friends, colleagues, relatives, family who have a little pet, showing your love and care",
         price: 300,
         image: [p_img47],
         category: "Others",
@@ -662,8 +662,8 @@ export const products = [
     },
     {
         _id: "aaabv",
-        name: "Dog Slim Fit Relaxed Denim Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Nylabone® Puppy Chew Bone Puppy Toy",
+        description: "Just like babies, our fur kids experience discomfort during the teething process. Nylabone's Puppy Chew Bone is made with soft, puppy-friendly material to satisfy teething pups. This bone is designed to encourage positive play and teach your puppy healthy chewing habits from an early age. ",
         price: 330,
         image: [p_img48],
         category: "Dog",
@@ -674,8 +674,8 @@ export const products = [
     },
     {
         _id: "aaabw",
-        name: "Kid Tapered Slim Fit Trouser",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "QBLEEV Pet Small Animals Clothes Birds Flight Suit For Parrots African Greys Parakeet ",
+        description: "Made of quality polyester，skin friendly, soft, durable，easy to clean，lightweight, does not irritate the skin, is safe for birds.",
         price: 310,
         image: [p_img49],
         category: "Others",
@@ -686,8 +686,8 @@ export const products = [
     },
     {
         _id: "aaabx",
-        name: "Kid Tapered Slim Fit Trouser",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Hedgehog Clothes Elk Costume Reindeer Costume for Hedgehogs",
+        description: "Special Customized and Fabric Friendly for hedgehogs - Made of soft and thick polar fleece material. It guarantees the composition of 100% cotton and also sufficient elasticity.keep your pets warm and comfortable in Spring, Autumn and Winter.",
         price: 340,
         image: [p_img50],
         category: "Others",
@@ -697,8 +697,8 @@ export const products = [
     },
     {
         _id: "aaaby",
-        name: "Cat Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Instincts SmartyKat Hidden Hijinks Cat Toy",
+        description: "Instincts by SmartyKat Hidden Hijinks releases your cat's inner instincts with a concealed wand toy that moves under a rustly fabric skirt, mimicking the motions and sounds of hidden prey darting and dashing in the wild. ",
         price: 320,
         image: [p_img51],
         category: "Cat",
@@ -709,8 +709,8 @@ export const products = [
     },
     {
         _id: "aaabz",
-        name: "Dog Slim Fit Relaxed Denim Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garDogt.",
+        name: "Playology® Squeaky Chew Ball Scented Dog Toy - Peanut Butter",
+        description: "Meet the Squeaky Chew Ball. Featuring a fun squeaky sound and enticing all-natural peanut butter scent, this is the toy your pup's been waiting for! Built to float, the Squeaky Chew Ball is not only great for the backyard or park but also for water play at the pool, pond, lake, or beach. The Extra Large size is ideal for dogs 50 lbs and up.",
         price: 350,
         image: [p_img52],
         category: "Dog",
