@@ -61,8 +61,15 @@ ul{
 
 .container{
     max-width: 1540px;
-    margin: 0 auto;
-    padding: 0 20px;
+    // margin: 0 auto;
+    // padding: 0 20px;
+}
+
+
+.nav-tabs{
+    .nav-link{
+        color: $primary-black;
+    }
 }
 
 .btn{
@@ -183,6 +190,20 @@ footer{
             span{
                 color: rgba($primary-black, 0.5);
             }
+        }
+    }
+}
+
+.product-detail{
+    .mySwiper{
+        .swiper-slide{
+            height: auto !important;
+        }
+    }
+    .price{
+        font-weight: bold;
+        span{
+            color: rgba($color:$primary-black, $alpha:0.5);
         }
     }
 }
