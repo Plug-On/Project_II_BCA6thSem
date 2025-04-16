@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../common/Layout'
-import Sidebar from '../common/sidebar'
+import Sidebar from '../common/Sidebar'
 
 const Dashboard = () => {
 
