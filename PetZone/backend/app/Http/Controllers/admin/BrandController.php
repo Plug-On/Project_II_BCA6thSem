@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class BrandController extends Controller
 {
-    //this method will return all the categories
+    //this method will return all the brands
     public function index()
     {
-        $categories = Category::orderBy('created_at', 'desc')->get();
+        $brands = Brand::orderBy('created_at', 'desc')->get();
         return response()->json([
             'status' => 200,
-            'data' => $categories
+            'data' => $brands
         ]);
     }
 
-    //this method will store category in db
+    //this method will store brand in db
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'name'=> 'required'
@@ -32,43 +32,43 @@ class CategoryController extends Controller
             ], 400);
         }
 
-        $category = new Category();
-        $category->name = $request->name;
-        $category->status = $request->status;
-        $category->save();
+        $brand = new Brand();
+        $brand->name = $request->name;
+        $brand->status = $request->status;
+        $brand->save();
 
         return response()->json([
             'status' => 200,
-            'message' => 'Category added successfully',
-            'data' => $category
+            'message' => 'Brand added successfully',
+            'data' => $brand
         ], 200);
     }
 
-    //this method will return single value category
+    //this method will return single brand
      public function show($id){
-        $category = Category::find($id);
+        $brand = Brand::find($id);
 
-        if($category == null){
+        if($brand == null){
             return response()->json([
                 'status' => 404,
-                'message' => 'Category not found'
+                'message' => 'Brand not found'
             ], 404);
         }
         return response()->json([
             'status' => 200,
-            'data' => $category
+            'data' => $brand
         ]);
     }
 
-    //this method will update single category
+    //this method will update single brand
     public function update($id, Request $request){
-        $category = Category::find($id);
+        $brand = Brand::find($id);
 
-        if($category == null){
+        if($brand == null){
             return response()->json([
                 'status' => 404,
-                'message' => 'Category not found',
-                'data' => []
+                'message' => 'Brand not found',
+                'data' =>[]
             ], 404);
         }
 
@@ -83,31 +83,31 @@ class CategoryController extends Controller
             ], 400);
         }
 
-        $category->name = $request->name;
-        $category->status = $request->status;
-        $category->save();
+        $brand->name = $request->name;
+        $brand->status = $request->status;
+        $brand->save();
 
         return response()->json([
             'status' => 200,
-            'message' => 'Category updated successfully',
-            'data' => $category
+            'message' => 'Brand updated successfully',
+            'data' => $brand
         ], 200);
     }
 
-    //this method will destroy single category
+    //this method will destroy single brand
     public function destroy($id){
-        $category = Category::find($id);
+        $brand = Brand::find($id);
 
-        if($category == null){
+        if($brand == null){
             return response()->json([
                 'status' => 404,
-                'message' => 'Category not found'
+                'message' => 'Brand not found'
             ], 404);
         }
-        $category->delete();
+        $brand->delete();
         return response()->json([
             'status' => 200,
-            'message' => 'Category deleted successfully'
+            'message' => 'Brand deleted successfully'
         ], 200);
     }
 }
