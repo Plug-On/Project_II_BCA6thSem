@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import sliderOneImg from '../../assets/images/banner-1.jpg';
 import sliderTwoImg from '../../assets/images/banner-2.jpg';
+import sliderThreeImg from '../../assets/images/banner-3.jpg';
+
 
 const Hero = () => {
   return (
@@ -19,7 +21,7 @@ const Hero = () => {
         }}
       >               
         <SwiperSlide>
-            <div className="content" style={{ backgroundImage: `url(${sliderOneImg})` }}>                        
+            <div className="content" style={{ backgroundImage: `url(${sliderThreeImg})` }}>                        
             </div>                   
         </SwiperSlide>
         <SwiperSlide>
