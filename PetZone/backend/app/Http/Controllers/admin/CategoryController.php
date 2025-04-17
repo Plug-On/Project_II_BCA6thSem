@@ -22,7 +22,8 @@ class CategoryController extends Controller
     //this method will store category in db
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
-            'name'=> 'required'
+            'name'=> 'required',
+            'status' => 'required',
         ]);
 
         if($validator->fails()){

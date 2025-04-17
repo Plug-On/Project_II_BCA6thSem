@@ -12,7 +12,7 @@ const Login = () => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const navigate = useNavigate();
 
