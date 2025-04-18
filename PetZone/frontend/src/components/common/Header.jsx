@@ -11,10 +11,10 @@ const Header = () => {
       <span className='text-white'>Your fashion partner</span>
     </div>
 
-    <div className='container'>
+    <div className='container '>
         <Navbar expand="lg" className="">
         <Navbar.Brand href="/">
-          <img src={Logo} alt="" width={120}/>
+          <img src={Logo} alt="" width={150}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
