@@ -29,10 +29,12 @@ const Create = ({ placeholder }) => {
       register,
       handleSubmit,
       watch,
+      setError,
       formState: { errors },
     } = useForm();
 
     const saveProduct = async (data) =>{
+      const formData = {...data,"description":content}
       setDisable(true);
       const res =  await fetch (`${apiUrl}/products`,{
             method: 'POST',
@@ -41,7 +43,7 @@ const Create = ({ placeholder }) => {
               'Accept' : 'application/json',
               'Authorization' : `Bearer ${adminToken()}`
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(formData)
           })
           .then(res => res.json())
           .then(result => {
@@ -49,9 +51,13 @@ const Create = ({ placeholder }) => {
         
             if (result.status == 200) {
               toast.success(result.message);
-              navigate('/admin/categories')
+              navigate('/admin/products')
             } else {
-            console.log("Something went wrong"); 
+              const formErrors = result.errors;
+              Object.keys(formErrors).forEach((field)=> {
+                setError(field, {message: formErrors[field][0] });
+              })
+            
           }
       
           })
@@ -68,7 +74,7 @@ const Create = ({ placeholder }) => {
       })
       .then(res => res.json())
       .then(result => {
-        console.log(result.data);
+        
         setCategories(result.data);
       })
     }
@@ -160,8 +166,12 @@ const Create = ({ placeholder }) => {
                     </div>
                   <div className='col-md-6'>
                   <div className="mb-3">
-                        <label htmlFor="">Brand</label>
-                          <select className='form-control'>
+                        <label htmlFor="">Brands</label>
+                          <select 
+                            {
+                              ...register('brand')
+                            } 
+                          className='form-control'>
                             <option value="">Select a Brand</option>
                             {
                               brands && brands.map(brand => {
@@ -179,7 +189,11 @@ const Create = ({ placeholder }) => {
                     <label htmlFor="" className='form-label'>
                       Short Description
                     </label>
-                    <textarea className='form-control' placeholder='Short Description' rows={3}></textarea>
+                    <textarea 
+                      {
+                        ...register('short_description')
+                      } 
+                    className='form-control' placeholder='Short Description' rows={3}></textarea>
                 </div>
 
                 <div className='mb-3'>
@@ -214,7 +228,11 @@ const Create = ({ placeholder }) => {
                   <div className='col-md-6'>
                   <div className='mb-3'>
                       <label htmlFor="" className='form-label'>Discounted Price</label>
-                      <input type="text" placeholder='Discounted Price' className='form-control' />
+                      <input 
+                        {
+                          ...register('compare_price')
+                        } 
+                      type="text" placeholder='Discounted Price' className='form-control' />
                     </div>
                   </div>
                 </div>
@@ -241,7 +259,11 @@ const Create = ({ placeholder }) => {
                   <div className='col-md-6'>
                   <div className='mb-3'>
                       <label htmlFor="" className='form-label'>Barcode</label>
-                      <input type="text" placeholder='Barcode ' className='form-control' />
+                      <input 
+                         {
+                          ...register('barcode')
+                        } 
+                      type="text" placeholder='Barcode ' className='form-control' />
                     </div>
                   </div>
                 </div>
@@ -250,7 +272,11 @@ const Create = ({ placeholder }) => {
                   <div className='col-md-6'>
                     <div className='mb-3'>
                       <label htmlFor="" className='form-label'>Qty</label>
-                      <input type="text" placeholder='Qty' className='form-control' />
+                      <input 
+                         {
+                          ...register('qty')
+                        } 
+                      type="text" placeholder='Qty' className='form-control' />
                     </div>
                   </div>
                   <div className='col-md-6'>                   
