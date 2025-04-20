@@ -135,6 +135,8 @@ const Edit = ({placeholder}) => {
       const formData = new FormData();
       const file = e.target.files[0];
       formData.append("image",file);
+      formData.append("product_id", params.id)
+      
       setDisable(true);
       
       const res =  await fetch (`${apiUrl}/save-product-image`,{
