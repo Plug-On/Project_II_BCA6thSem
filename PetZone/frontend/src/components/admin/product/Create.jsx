@@ -55,10 +55,7 @@ const Create = ({ placeholder }) => {
               toast.success(result.message);
               navigate('/admin/products')
             } else {
-<<<<<<< HEAD
               console.log(result.message);
-=======
->>>>>>> 69a0ac328b7cbf273fe37b0276fa7f39c19ed42e
               const formErrors = result.message;
               Object.keys(formErrors).forEach((field)=> {
                 setError(field, {message: formErrors[field][0] });
