@@ -53,7 +53,8 @@ const Create = ({ placeholder }) => {
               toast.success(result.message);
               navigate('/admin/products')
             } else {
-              const formErrors = result.errors;
+              console.log(result.message);
+              const formErrors = result.message;
               Object.keys(formErrors).forEach((field)=> {
                 setError(field, {message: formErrors[field][0] });
               })

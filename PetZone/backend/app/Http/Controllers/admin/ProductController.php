@@ -134,7 +134,7 @@ class ProductController extends Controller
             'title' => 'required',
             'price' => 'required|numeric',
             'category' => 'required|integer',
-            'sku' => 'required|unique:products,sku,'.$id.',id',
+            'sku' => 'required|unique:products,sku',
             'is_featured' => 'required',
             'status' => 'required',
         ]);
