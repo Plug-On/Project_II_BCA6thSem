@@ -232,7 +232,7 @@ const Create = ({ placeholder }) => {
                 </div>
 
                 <div className='mb-3'>
-                  <label htmlFor="" className='form-label'>Describtion</label>
+                  <label htmlFor="" className='form-label'>Description</label>
                   <JoditEditor
                     ref={editor}
                     value={content}

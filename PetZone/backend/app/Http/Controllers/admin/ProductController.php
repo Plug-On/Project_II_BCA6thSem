@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\ProductSize;
 use App\Models\TempImage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'DESC')
-        ->with('product_images')
+        ->with(['product_images','product_sizes'])
         ->get();
         return response()->json([
             'status' => '200',
@@ -109,7 +110,7 @@ class ProductController extends Controller
      //This method will return single product
      public function show($id)
      {
-        $product =  Product::with('product_images')
+        $product =  Product::with(['product_images','product_sizes'])
                     ->find($id);
 
         if($product == null) {
@@ -119,9 +120,12 @@ class ProductController extends Controller
             ],404);
         }
 
+        $productSizes=$product->product_sizes()->pluck('size_id');
+
         return response()-> json([
             'status' => 200,
             'data' =>  $product,
+            'productSizes' => $productSizes
         ],200);
      }
 
@@ -143,7 +147,7 @@ class ProductController extends Controller
             'title' => 'required',
             'price' => 'required|numeric',
             'category' => 'required|integer',
-            'sku' => 'required|unique:products,sku',
+            'sku' => 'required|unique:products,sku,'. $id,
             'is_featured' => 'required',
             'status' => 'required',
         ]);
@@ -169,6 +173,16 @@ class ProductController extends Controller
         $product->is_featured = $request->is_featured;
         $product->barcode = $request->barcode;
         $product->save();
+
+        if(!empty($request->sizes)) {
+            ProductSize::where('product_id',$product->id)->delete();
+            foreach ($request->sizes as $sizeId) {
+            $productSize = new ProductSize();
+            $productSize->size_id = $sizeId;
+            $productSize->product_id = $product->id;
+            $productSize->save();
+            }
+        }
 
         //return response
         return response()->json([
@@ -244,4 +258,15 @@ class ProductController extends Controller
         ],200);
      }
 
+
+     public function updateDefaultImage(Request $request) {
+        $product = Product::find($request->product_id);
+        $product->image = $request->image;
+        $product->save();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Product default image changed successfully',
+        ],200);
+     }
 }
