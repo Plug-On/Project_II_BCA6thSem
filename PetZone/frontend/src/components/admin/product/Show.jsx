@@ -34,7 +34,7 @@ const Show = () => {
 
       const deleteProduct = async (id) => {
           
-          if(confirm("Are you sure you want ot delete?")) {
+          if(confirm("Are you sure you want to delete?")) {
             const res =  await fetch (`${apiUrl}/products/${id}`,{
               method: 'DELETE',
               headers: {
