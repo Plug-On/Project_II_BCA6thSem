@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Layout from './common/Layout'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Thumbs, FreeMode, Navigation  } from 'swiper/modules';
 import 'swiper/css';
@@ -14,12 +14,42 @@ import ProductImgThree from '../assets/images/mens/seven.jpg';
 import { Rating } from 'react-simple-star-rating'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import { apiUrl } from './common/http';
 
 
 
 const Product = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [rating, setRating] = useState(4)
+    const [product, setProduct] = useState([])
+    const [productImages, setproductImages] = useState([])
+    const params = useParams();
+
+    const fetchProduct = () =>{
+        fetch(`${apiUrl}/get-product/${params.id}` , {
+          method: 'GET',
+          headers : {
+            'Content-type' : 'application/json',
+            'Application' : 'application/json',
+    
+          }
+        })
+        .then(res => res.json())
+        .then(result => {
+          if(result.status ==200) {
+            setProduct(result.data)
+            setproductImages(result.data.product_images)
+          } else {
+            console.log("Something went wrong");
+          }
+        //   setProduct(result.data)
+        })
+      }
+
+      useEffect(() => {
+        fetchProduct()
+      }, [])
+
   return (
     <Layout>
         <div className='container product-detail'>
@@ -53,35 +83,24 @@ const Product = () => {
                                     modules={[FreeMode, Navigation, Thumbs]}
                                     className="mySwiper mt-2">
                                         
-                                <SwiperSlide>
-                                    <div className='content'>
-                                        <img 
-                                            src={ProductImgOne} 
-                                            alt="" 
-                                            height={100}
-                                            className='w-100' />
-                                    </div>                                                                      
-                                </SwiperSlide>
+                                        {
+                                            productImages && productImages.map(product_image =>{
+                                                return(
+                                                    <SwiperSlide>
+                                                        <div className='content'>
+                                                            <img 
+                                                                src={product_image.image_url} 
+                                                                alt="" 
+                                                                height={100}
+                                                                className='w-100' />
+                                                        </div>                                                                      
+                                                    </SwiperSlide>
+                                                )
+                                            })
+                                        }
 
-                                <SwiperSlide>
-                                    <div className='content'>
-                                        <img 
-                                            src={ProductImgTwo} 
-                                            alt="" 
-                                            height={100}
-                                            className='w-100' />
-                                    </div>                                                                      
-                                </SwiperSlide>
+                                
 
-                                <SwiperSlide>
-                                    <div className='content'>
-                                        <img 
-                                            src={ProductImgThree} 
-                                            alt="" 
-                                            height={100}
-                                            className='w-100' />
-                                    </div>                                                                      
-                                </SwiperSlide>
                             </Swiper>
                         </div>
                         <div className='col-10'>
@@ -130,7 +149,7 @@ const Product = () => {
                     </div>
                 </div>
                 <div className='col-md-7'>
-                    <h2>Dummy Product Title</h2>
+                    <h2>{product.title}</h2>
                     <div>
                     <Rating
                     readonly
@@ -140,12 +159,13 @@ const Product = () => {
                     <span className='pt-1 ps-2'>10 Reviews</span>
                     </div>
                     <div className='price  h3 py-3'>
-                        $200 <span className='text-decoration-line-through'>$30</span>
+                    Rs.{product.price} &nbsp;
+                        {
+                        product.compare_price && <span className='text-decoration-line-through'>Rs.{product.compare_price}</span>
+                        }
                     </div>
                     <div>
-                        100% Original Products <br />
-                        Pay on delivery might be available <br />
-                        Easy 30 days returns and exchanges
+                        {product.short_description}
                     </div>
                     <div className='pt-3'>
                     <strong >Select Size</strong>
@@ -162,7 +182,7 @@ const Product = () => {
                     <hr />
                     <div>
                         <strong>SKU: </strong>
-                        DDDX2234
+                        {product.sku}
                     </div>
                     
                 </div>
