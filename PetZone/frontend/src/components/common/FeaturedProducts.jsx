@@ -37,12 +37,12 @@ const [Products, setProducts] = useState([]);
                     <img src={product.image_url} alt="" className='w-100' />
                 </div>
                 <div className='card-body pt-3'>
-                  <a href="">{product.title}t</a>
+                  <a href="">{product.title}</a>
                   <div className='price'>
-                    ${product.price} &nbsp;
+                    Rs.{product.price} &nbsp;
 
                     {
-                      product.compare_price && <span className='text-decoration-line-through'>${product.compare_price}</span>
+                      product.compare_price && <span className='text-decoration-line-through'>Rs.{product.compare_price}</span>
                     }
                     
                   </div>

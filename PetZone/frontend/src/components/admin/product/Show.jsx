@@ -97,7 +97,7 @@ const Show = () => {
                             <th>Title</th>
                             <th>Price</th>
                             <th>Qty</th>
-                            <th>Sku</th>
+                            <th>SKU</th>
                             <th width="100">Status</th>
                             <th width="100">Action</th>
                             </tr>
