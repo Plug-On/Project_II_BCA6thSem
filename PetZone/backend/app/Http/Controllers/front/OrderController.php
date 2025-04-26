@@ -22,7 +22,6 @@ class OrderController extends Controller
         $order->state = $request->state;
         $order->zip = $request->zip;
         $order->city = $request->city;
-        $order->city = $request->city;
         $order->grand_total = $request->grand_total;
         $order->subtotal = $request->sub_total;
         $order->discount = $request->discount;
