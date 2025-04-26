@@ -78,7 +78,7 @@ export const CartProvider = ({children}) => {
     }
 
     const shipping = () => {
-        return 0;
+        return 0 ;
     }
 
     const subTotal = () => {
