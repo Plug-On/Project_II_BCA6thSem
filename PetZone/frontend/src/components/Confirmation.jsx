@@ -107,8 +107,8 @@ const Confirmation = () => {
                                               <tr key={item.id}>
                                                   <td>{item.name}</td>
                                                   <td>{item.qty}</td>
-                                                  <td>${item.unit_price}</td>
-                                                  <td>${item.price}</td>
+                                                  <td>Rs.{item.unit_price}</td>
+                                                  <td>Rs.{item.price}</td>
                                               </tr>
                                             ))
                                          }
@@ -116,15 +116,15 @@ const Confirmation = () => {
                                     <tfoot>
                                         <tr>
                                             <td className='text-end fw-bold' colSpan={3}>Subtotal</td>
-                                            <td>${order.subtotal}</td>
+                                            <td>Rs.{order.subtotal}</td>
                                         </tr>
                                         <tr>
                                             <td className='text-end fw-bold' colSpan={3}>Shipping</td>
-                                            <td>${order.shipping}</td>
+                                            <td>Rs.{order.shipping}</td>
                                         </tr>
                                         <tr>
                                             <td className='text-end fw-bold' colSpan={3}>Grandtotal</td>
-                                            <td>${order.grand_total}</td>
+                                            <td>Rs.{order.grand_total}</td>
                                         </tr>
                                     </tfoot>
                               </table>

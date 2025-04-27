@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Layout from '../../common/Layout'
-import Sidebar from '../../common/Sidebar'
-import { Link, useParams } from 'react-router-dom'
-import { adminToken, apiUrl } from '../../common/http'
-import Loader from '../../common/Loader'
-import { useForm } from 'react-hook-form'
-import { toast } from 'react-toastify'
+import Layout from '../common/Layout'
+import UserSidebar from '../common/UserSidebar'
+import { useParams } from 'react-router-dom';
+import { apiUrl, userToken } from '../common/http';
+import Loader from '../common/Loader';
 
 const OrderDetail = () => {
     const [order, setOrder] = useState([]); 
@@ -13,89 +11,48 @@ const OrderDetail = () => {
     const [loader , setLoader] = useState(false);
     const params = useParams();
 
-    const {
-        register ,
-        handleSubmit,
-        reset,
-        formState: {errors },
-    } = useForm();
-
     const fetchOrder = async () =>{
-        setLoader(true)
-        const res =  await fetch (`${apiUrl}/orders/${params.id}`,{
-          method: 'GET',
-          headers: {
-            'Content-type' : 'application/json',
-            'Accept' : 'application/json',
-            'Authorization' : `Bearer ${adminToken()}`
-          }
-        })
-        .then(res => res.json())
-        .then(result => {
-        setLoader(false)
-          if (result.status == 200) {
-            setOrder(result.data);
-            setItems(result.data.items);
-            reset({
-                status: result.data.status,
-                payment_status: result.data.payment_status,
+            setLoader(true)
+            const res =  await fetch (`${apiUrl}/get-order-details/${params.id}`,{
+              method: 'GET',
+              headers: {
+                'Content-type' : 'application/json',
+                'Accept' : 'application/json',
+                'Authorization' : `Bearer ${userToken()}`
+              }
             })
-          } else {
-          console.log("Something went wrong"); 
-        }
-    
-        })
-      }
-
-    const updateOrder =async (data) => {
-        setLoader(true)
-        const res =  await fetch (`${apiUrl}/update-order/${params.id}`,{
-            method: 'POST',
-            headers: {
-              'Content-type' : 'application/json',
-              'Accept' : 'application/json',
-              'Authorization' : `Bearer ${adminToken()}`
-            },
-            body: JSON.stringify(data)
-          })
-          .then(res => res.json())
-          .then(result => {
-          setLoader(false)
-            if (result.status == 200) {
-              setOrder(result.data);
-              reset({
-                  status: result.data.status,
-                  payment_status: result.data.payment_status,
-              });
-              toast.success(result.message)
-            } else {
-            console.log("Something went wrong"); 
+            .then(res => res.json())
+            .then(result => {
+            setLoader(false)
+              if (result.status == 200) {
+                setOrder(result.data);
+                setItems(result.data.items);
+               
+              } else {
+              console.log("Something went wrong"); 
+            }
+        
+            })
           }
-      
-          })
-    }
 
-      useEffect(() =>{
-        fetchOrder();
-      },[]);
-
+          useEffect(() => {
+            fetchOrder();
+          },[]);
   return (
     <Layout>
-        <div className='container'>
-         <div className='row'>
-             <div className='d-flex justify-content-between mt-5 pb-3'>
-                 <h4 className='h4 pb-0 mb-0'>Orders</h4>
-                 <Link to="/admin/orders" className="btn btn-primary">Back</Link>
-             </div>
-           <div className='col-md-3'>
-               <Sidebar/>
-           </div>
-    
-           <div className='col-md-9'>
-                <div className='row'>
-                    <div className='col-md-9'>
-                        <div className='card shadow mb-5'>
-                            <div className='card-body p-4'>
+    <div className='container'>
+     <div className='row'>
+         <div className='d-flex justify-content-between mt-5 pb-3'>
+             <h4 className='h4 pb-0 mb-0'>My Orders</h4>
+             {/* <Link to="" className="btn btn-primary">Button</Link> */}
+         </div>
+       <div className='col-md-3'>
+           <UserSidebar/>
+       </div>
+
+       <div className='col-md-9'>
+         <div className='card shadow mb-5'>
+         <div className='card-body p-4'>
                                 {
                                     loader == true && <Loader/>
                                 }
@@ -145,7 +102,7 @@ const OrderDetail = () => {
                                                 </div>
                                             </div>
                                             <div className='col-md-4'>
-                                                <div className='text-secondary pt-5'>Payment Status</div>
+                                                <div className='text-secondary pt-5'>Payment Method</div>
                                                 <p>COD</p>
                                             </div>
                                         </div>  
@@ -200,53 +157,14 @@ const OrderDetail = () => {
                                     </div>
                                 }
                             </div>
-                        </div>
-                    </div>
-                               
-                    <div className='col-md-3'>
-                        <div className='card shadow'>
-                            <div className='card-body p-4'>
-                                <form onSubmit={handleSubmit(updateOrder)}>
-                                    <div className='mb-3'>
-                                        <label className='form-label' htmlFor="status">Status</label>
-                                        <select 
-                                        {
-                                            ...register('status', {required: true})
-                                        }
-                                        id="status"
-                                        className='form-select'>
-                                            <option value="pending">Pending</option>
-                                            <option value="shipped">Shipped</option>
-                                            <option value="delivered">Delivered</option>
-                                            <option value="cancelled">Cancelled</option>
-                                        </select>
-                                    </div>
 
-                                    <div className='mb-3'>
-                                        <label className='form-label' htmlFor="payment-status">Payment Status</label>
-                                        <select 
-                                        {
-                                            ...register('payment_status', {required: true})
-                                        }
-                                        id="payment-status" className='form-select'>
-                                            <option value="paid">Paid</option>
-                                            <option value="not paid">Not paid</option>
-                                        </select>
-                                    </div>
-                                    <button type='submit' className='btn btn-primary'>
-                                        Update
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-             
-           </div>
          </div>
+
+         
        </div>
-    </Layout>
+     </div>
+   </div>
+</Layout>
   )
 }
 
