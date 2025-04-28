@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from '../common/Layout'
 import { Link } from 'react-router-dom'
 import UserSidebar from '../common/UserSidebar'
 import { useForm } from 'react-hook-form'
 import { apiUrl, userToken } from '../common/http'
+import { toast } from 'react-toastify'
+import Loader from '../common/Loader'
 
 
 const Profile = () => {
+
+  const [loading , setLoading] = useState(true);
 
   const {
       register,
@@ -26,6 +30,7 @@ const Profile = () => {
       })
       .then(res => res.json())
       .then(result => {
+        setLoading(false)
          reset({
           name: result.data.name,
           email: result.data.email,
@@ -41,7 +46,26 @@ const Profile = () => {
   });
 
   const updateAccount = async (data) => {
-        console.log(data)
+    fetch(`${apiUrl}/update-profile`,{
+      method: 'POST',
+      headers: {
+        'Content-type' : 'application/json',
+        'Accept' : 'application/json',
+        'Authorization' : `Bearer ${userToken()}`
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(result => {
+      if(result.status ==200) {
+        toast.success(result.message);
+      } else {
+        const formErrors = result.errors;
+        Object.keys(formErrors).forEach((field)=> {
+          setError(field, {message: formErrors[field][0] });
+      })
+    }
+    });
   }
 
   return (
@@ -57,6 +81,12 @@ const Profile = () => {
        </div>
 
        <div className='col-md-9'>
+        {
+          loading == true && <Loader/>
+        }
+         {
+          loading == false && 
+       
         <form onSubmit={handleSubmit(updateAccount)}>
           <div className='card shadow'>
               <div className='card-body p-4'>
@@ -178,6 +208,7 @@ const Profile = () => {
 
           <button className='btn btn-primary mt-4 mb-5'>Update</button>
         </form>
+}
        </div>
      </div>
    </div>

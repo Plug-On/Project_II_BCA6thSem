@@ -124,7 +124,7 @@ class AccountController extends Controller
 
         $validator = Validator:: make($request -> all(), [
             'name' => 'required',
-            'email' => 'required | email | unique:users, email, '.$request->user()->id.',id',
+            'email' => 'required|email|unique:users,email,'.$request->user()->id.',id',
             'city' => 'required|max:100',
             'state' => 'required|max:100',
             'zip' => 'required|max:100',
